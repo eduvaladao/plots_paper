@@ -38,8 +38,8 @@ cpdef double gex(double s, double phi0, double epsilon, double r0, double rth):
     return (lengths.L_ex(s, theta, phi0, epsilon, r0)/widths.W_ex(s, theta, phi0, epsilon, r0)) - rth 
 
 cpdef double sth_ex(double phi0, double epsilon, double r0, double rth, double chute):
-    return sciopt.fsolve(gex, chute, args=(phi0, epsilon, r0, rth), xtol=1e-02, maxfev=100)[0]
-    # return sciopt.root(gex, chute, args=(phi0, epsilon, r0, rth), method='lm').x[0] 
+    # return sciopt.fsolve(gex, chute, args=(phi0, epsilon, r0, rth), xtol=1e-02, maxfev=100)[0]
+    return sciopt.root(gex, chute, args=(phi0, epsilon, r0, rth), method='lm').x[0] 
 
 cpdef double sigma_ex(double phi0, double epsilon, double r0, double rth, double chute):
     return pi*(sth_ex(phi0, epsilon, r0, rth, chute)**2 - sthy(r0, phi0, epsilon, chute)**2) 
