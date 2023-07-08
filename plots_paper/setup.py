@@ -7,7 +7,7 @@ import numpy
 ext_modules=[
     Extension("arcs",        ["arcs.pyx"],        include_dirs=[numpy.get_include()], extra_compile_args=["-O3"]),
     Extension("angles",      ["angles.pyx"],      include_dirs=[numpy.get_include()], extra_compile_args=["-O3"]),
-    Extension("lenghts",     ["lenghts.pyx"],     include_dirs=[numpy.get_include()], extra_compile_args=["-O3"]),    
+    Extension("lengths",     ["lengths.pyx"],     include_dirs=[numpy.get_include()], extra_compile_args=["-O3"]),    
     Extension("widths",      ["widths.pyx"],      include_dirs=[numpy.get_include()], extra_compile_args=["-O3"]),
     Extension("LWcross",     ["LWcross.pyx"],     include_dirs=[numpy.get_include()], extra_compile_args=["-O3"]),
 ]
