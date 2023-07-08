@@ -42,11 +42,11 @@ cpdef double sth_ex(double phi0, double epsilon, double r0, double rth, double c
     return sciopt.root(gex, chute, args=(phi0, epsilon, r0, rth), method='lm').x[0] 
 
 cpdef double sigma_ex(double phi0, double epsilon, double r0, double rth, double chute):
-    return pi*(sth_ex(phi0, epsilon, r0, rth, chute)**2 - sthy(r0, phi0, epsilon, chute)**2) 
+    return (sth_ex(phi0, epsilon, r0, rth, chute)**2 - sthy(r0, phi0, epsilon, chute)**2) 
        
 cpdef double sigma_ex_medio(double epsilon, double r0, double rth):
     cdef double chute = -r0*(1/Sin(r0 - r0*rth))
-    return (1/pi)*quad(sigma_ex, 0.0, pi, args=(epsilon, r0, rth, chute))[0] 
+    return quad(sigma_ex, 0.0, pi, args=(epsilon, r0, rth, chute))[0] 
 
     
 cpdef double sigma_pertL2_med_ex(double epsilon, double r0, double rth):
