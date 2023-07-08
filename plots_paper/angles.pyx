@@ -1,9 +1,13 @@
+# cython: language_level=3
+
 import numpy as np
 import cmath
 import arcs
 
+
 cimport numpy as np
 cimport cython
+
 
 from libc.math cimport sin, cos, pi
 

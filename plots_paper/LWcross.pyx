@@ -1,3 +1,6 @@
+# cython: language_level=3
+
+
 import numpy as np
 import cmath
 import scipy.optimize as sciopt 

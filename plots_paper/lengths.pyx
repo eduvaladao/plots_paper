@@ -1,9 +1,12 @@
+# cython: language_level=3
+
 import numpy as np
-import cmath 
+import cmath
 import arcs
 import angles
 
 cimport numpy as np
+
 
 from scipy.integrate import quad
 from libc.math cimport sin, cos, acos, sqrt, pi
